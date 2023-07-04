@@ -1,0 +1,16 @@
+{% extends 'admin/adminhome.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+
+<div class="card">
+
+  <form method="post" enctype="multipart/form-data" style="color:black;margin-left:50px;margin-right:50px;">
+    <br><h1>ADD COURSE</h1><br>
+    {% csrf_token %}
+    {{form|crispy}}
+    <button type="submit" class="btn btn-primary">Submit</button><br>
+
+  </form>
+</div>
+
+{% endblock %}

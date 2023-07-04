@@ -1,0 +1,34 @@
+{% extends 'admin/adminhome.html' %}
+{% block content %}
+
+<div class="card" style="color:black;">
+ <br> <h1>VIEW COURSES</h1><br>
+  <table style="margin-left:10px;">
+    <tr>
+      <th>SI.NO</th>
+      <th>Name</th>
+      <th>Branches</th>
+      <th>Duration</th>
+      <th>University</th>
+      <th>Description</th>
+      <th>Edit</th>
+      <th>Edit</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.branches}}</td>
+      <td>{{i.duration}}</td>
+      <td>{{i.university}}</td>
+      <td>{{i.description}}</td>
+
+      <td><a href="{% url 'courseupdate' i.id %}" class="btn btn-primary">Update</a></td>
+      <td><a href="{% url 'deletecourse' i.id %}" class="btn btn-danger">Delete</a></td>
+
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}
