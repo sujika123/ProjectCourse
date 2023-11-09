@@ -54,17 +54,6 @@ def profileview(request):
     print(data)
     return render(request,'user/profileview.html',{'data':data})
 
-#Change Password
-# def changepass(request,id):
-#     user = Login.objects.get(id=id)
-#     form = Loginform(instance=user)
-#     if request.method == "POST":
-#         form = Loginform(request.POST or None,request.FILES,instance=user or None)
-#         if form.is_valid():
-#             obj = form.save(commit=False)
-#             obj.save()
-#             return redirect('userhome')
-#     return render(request,'user/changePassword.html',{'form':form})
 
 
 def courseadd(request):
@@ -105,3 +94,4 @@ def deletecourse(request,id):
 def userviewcourse(request):
     data = courses.objects.all()
     return render(request,'user/userviewcourse.html',{'data':data})
+
